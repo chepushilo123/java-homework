@@ -1,61 +1,248 @@
-var a;
-var b;
-var c;
-var summ;
+//Задача 1
 
-var multiply;
-
-var word = 0;
-
-console.log(a = prompt('назови первое число'))
-console.log(b = prompt('назови второе число'))
-console.log(c = prompt('назови третье число'))
-
-console.log(typeof(a))
-console.log(typeof(b))
-console.log(typeof(c))
+var x = 20;
+var y = 58;
+var z = 42;
+var summ = x + y + z;
+console.log(summ)
 
 
-if ( Boolean(a) == false )   {
-    console.log(a = prompt(' какое первое число?'))
-    console.log(typeof(a))
+
+
+
+//Задача 2
+
+var year;
+var hours;
+var minuts;
+var myAgeInSeconds;
+
+year = prompt('Укажите ваш возраст', 20)
+
+year = Number(year);
+
+hours = year * 8760;
+console.log(hours)
+minuts = hours * 60;
+console.log(minuts)
+myAgeInSeconds = minuts * 60;
+console.log(myAgeInSeconds)
+
+alert('вам ' + myAgeInSeconds + ' в секундах')
+
+
+
+
+
+//Задача 3
+
+var count = 42
+var userName = '42'
+
+count = String(count)
+userName = Number(userName)
+
+
+//второй способ
+
+var a = count;
+count = userName;
+userName = a;
+
+
+
+
+
+//Задача 4
+
+var a = 1
+var b = 2
+var c = ' белых медведей'
+
+a = String(a)
+b = String(b)
+
+var together = a + b + c;
+
+console.log(together)
+
+
+
+
+
+//Задача 5
+var vname = 'vasya';
+var number = 17;
+var bol = true;
+
+console.log('Variable: ' + vname + ' have type: ' + typeof(vname))
+console.log('Variable: ' + number + ' have type: ' + typeof(number))
+console.log('Variable: ' + bol + ' have type: ' + typeof(bol))
+
+
+
+
+
+
+//Задача 6
+
+var firstname;
+var lastname;
+
+firstname = prompt('Укажите ваше имя')
+lastname = prompt('Укажите вашу фамилию')
+
+firstname = firstname + ' ';
+
+console.log('Добрый день, ' + firstname + lastname)
+alert('Добрый день, ' + firstname + lastname)
+
+
+
+
+
+//Задача 7
+
+var a = 4;
+var b = 3;
+
+a = --a;
+b = ++b;
+
+console.log(a)
+console.log(b)
+
+
+
+
+
+//Задача 8
+
+var str = 'true';
+var bool = false;
+var num = 17;
+var undef = undefined;
+var nul = null;
+
+console.log(typeof(str))
+console.log(typeof(bool))
+console.log(typeof(num))
+console.log(typeof(undef))
+console.log(typeof(nul))
+
+
+
+
+
+//Задача 9
+
+var height = 15;
+var width = 20;
+
+if (height > width) {
+    console.log(height)
+} else {
+    console.log(width)
 }
 
-if ( Boolean(b) == false )   {
-    console.log(b = prompt(' какое второе число?'))
-    console.log(typeof(b))
-}
 
-if ( Boolean(c) == false )   {
-    console.log(c = prompt(' какое третье число?'))
-    console.log(typeof(c))
-}
 
-if ( Boolean(a) + Boolean(b) +Boolean(c) == 0 ) {
-    alert('почему вы не написали числa?')
-}
 
-console.log(a = Number(a))
-console.log(b = Number(b))
-console.log(c = Number(c))
 
-if (a * b * c >= 1) {
-    multiply = confirm('эти числа умножить или сложиить?')
-}   else {
-    word = 1;
-    alert('Ну и ладно...')
-}
+//Задача 10
 
-if (word == 1) {
-
-}   else {
-    if (multiply == 1) {
-        summ = a * b * c;
-        alert('получилось число ' + summ)
-    }   else {
-        summ = a + b + c;
-        alert('получилось число ' + summ)
+for(i = 0; i < 20; i++) {
+    if (i % 3 === 0) {
+        console.log(i)
     }
 }
 
-console.log(summ)
+
+
+
+//Задача 11
+
+var key = true;
+var documents = true;
+var pen = true;
+var apple = true;
+var orange = false;
+var shouldGoToWork;
+
+if (key && documents && pen && apple && orange === true) {
+    shouldGoToWork = true;
+    console.log(shouldGoToWork)
+} else {
+    shouldGoToWork = false;
+    console.log(shouldGoToWork)
+}
+
+
+
+
+
+//Задача 12
+
+var number;
+number = prompt('Введите число', 30)
+number = Number(number)
+console.log(number)
+
+if (number % 3 === 0  && number % 5 === 0) {
+    console.log('FizBuz')
+} else {
+    if (number % 3 === 0) {
+        console.log('Fiz')
+    }
+
+    if (number % 5 === 0 ) {
+        console.log('Buz')
+    }
+}
+
+
+
+
+
+//Задача 13
+
+var age;
+age = prompt('Укажите свой возраст')
+age = Number(age)
+
+if (age >= 18) {
+    alert('Попей пивка.')
+} else {
+    if (age <= 15) {
+        alert('Пей колу')
+    } else {
+        if (age === 16 || 17 || 18){
+            alert('Можешь выкурить сигаретку, только маме не говори')
+        }
+    }
+}
+
+
+
+
+//Задача 14
+
+var country;
+country = prompt('В какую сторону света вы бы хотели отправиться?', 'восток')
+
+switch(country) {
+    case 'юг':
+        alert('на юг пойдешь счастье найдешь')
+        break;
+    case 'север':
+        alert('на север пойдешь много денег найдешь')
+        break;
+    case 'запад':
+        alert('на запад пойдешь верного друга найдешь')
+        break;
+    case 'восток':
+        alert('на восток пойдешь разработчиком станешь')
+        break;
+    default:
+        console.log('Попробуйте ещё раз')
+}
