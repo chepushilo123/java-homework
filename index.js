@@ -1,4 +1,4 @@
-/*
+
 
 //задача 1
 
@@ -129,7 +129,7 @@ function getSum(a, b) {
 
 getSum(a, b)
 
-*/
+
 
 
 
