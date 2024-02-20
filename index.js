@@ -1,133 +1,110 @@
-//функции
-
 //задача 1
 
-var a = prompt('Введите число', 100);
+const obj = {
+    name: 'petya',
+    age: 40,
+};
 
-function getSum(a) {
+delete obj.name;
+delete obj.age;
 
-    var sum = 0;
+console.log(obj)
 
-    for (i = 0; i <= a; i++) {
-        sum = sum + i;
-    }
-
-    console.log(sum)
-}
-
-getSum(a)
 
 
 
 
 //задача 2
 
-var money = prompt('какую сумму вы хотите взять?');
-money = Number(money);
+const obj = {
+    name: 'petya',
+    age: 40,
+};
 
-function value(money) {
-    var pereplata;
-    var allSum;
-    var month;
+let key = prompt('key?')
 
-    pereplata = money * 17 / 100;
-    allSum = (money + pereplata);
-    month = allSum / 5 / 12;
-    
 
-    console.log('вся сумма составит ' + allSum)
-    console.log('переплата составит ' + pereplata)
-    console.log('ежемесячная оплата составит ' + month)
+if (Boolean(obj[key]) === true) {
+    console.log('true')
+} else {
+    console.log('false')
 }
 
-value(money)
+
 
 
 
 
 //задача 3
 
-var str = prompt('yours word');
-var from = prompt('from');
-var to = prompt('to');
-
-console.log(str)
-
-function trimString(str, from, to) {
-    
-    var n = '';
-    
-    while ( from != to) {
-        n = n + str[from];
-        from++;
-    }
-
-    console.log(n)
+const student = {
+    name: 'John',
+    age: 19,
+    isHappy: true
 }
-trimString(str, from, to)
+
+for (let key in student) {
+    console.log(key)
+}
+
+for (key in student) {
+    console.log(student[key])
+}
+
 
 
 
 
 //задача 4
 
+const colors = {
+    'ru pum pu ru rum': {
+        red: 'красный',
+        green: 'зеленый',
+        blue: 'синий',
 
-var number = prompt('ваше число', 2021);
+        getRed: function () {
+            console.log(this.red)
+        },
+        getBlue: function () {
+            console.log(this.blue)
+        },   
+    },
 
-console.log(number)
+  };
 
-function getSumNumbers(number) {
-    var sum = 0;
-    var c = 0;
+colors["ru pum pu ru rum"].getRed()
+colors["ru pum pu ru rum"].getBlue()
 
-    for ( i = 0; i < number.length; i++) {
 
-        c = number[i];
-        c = Number(c);
 
-        sum = sum + c;
-    }
-
-    console.log(sum)
-}
-
-getSumNumbers(number)
 
 
 
 
 //задача 5
 
-var a = prompt('a = ?', 1);
-var b = prompt('b = ?', 1);
-
-a = Number(a);
-b = Number(b);
-
-
-function getSum(a, b) {
-    var sum = 0;
-
-    if (a === b) {
-        console.log('Since both are same')
-        return a;
-    }
-
-    if (a > b) {
-        var temp = a;
-        a = b;
-        b = temp;
-    }
-
-    for (i = a; i <= b; i++) {
-        sum += i;
-        a++;
-    }
-
-    console.log(sum)
+let salaries = {
+    andrey: 500,
+    sveta: 413,
+    anton: 987,
+    igor: 664,
+    alexandra: 199,
 }
 
-getSum(a, b)
+let sum = 0;
+let number = 0;
+
+for (let key in salaries) {
+    sum += salaries[key];
+    number++;
+}
+
+let sredSum = sum / number;
+
+console.log(sum);
+console.log(sredSum)
+
 
 
 
@@ -135,24 +112,26 @@ getSum(a, b)
 
 //задача 6
 
-var bool = confirm('true or false');
+const user = {};
 
-function fooboo(bool) {
-    if (bool == true) {
-        foo()
-    } else {
-        boo()
-    }
+let rename = function () {
+    user.login = prompt('введите имя');
+    user.password = prompt('придумайте пароль');
 }
 
-function foo() {
-    console.log('foo')
-    return;
+rename()
+
+let bool = confirm('сохранить логин и парль?')
+
+if (Boolean(bool) === false) {
+    rename()
 }
 
-function boo() {
-    console.log('boo')
-    return;
-}
+let checklogin = prompt('Введите логин');
+let checkPassword = prompt('Введите пароль');
 
-fooboo(bool)
+if (user.login === checklogin && user.password === checkPassword) {
+    alert('добро пожаловать')
+} else {
+    alert('error')
+}
