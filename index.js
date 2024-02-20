@@ -16,7 +16,7 @@ console.log(obj)
 
 //задача 2
 
-const obj = {
+const object = {
     name: 'petya',
     age: 40,
 };
