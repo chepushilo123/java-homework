@@ -1,35 +1,15 @@
 //задача 1
 
-const obj = {
-    name: 'petya',
-    age: 40,
-};
-
-delete obj.name;
-delete obj.age;
-
-console.log(obj)
-
+const colors = ['red', 'green', 'blue'];
+console.log(colors.length);
 
 
 
 
 //задача 2
 
-const object = {
-    name: 'petya',
-    age: 40,
-};
-
-let key = prompt('key?')
-
-
-if (Boolean(obj[key]) === true) {
-    console.log('true')
-} else {
-    console.log('false')
-}
-
+const animals = ['monkey', 'dog', 'cat'];
+console.log(animals.at(-1));    
 
 
 
@@ -37,101 +17,113 @@ if (Boolean(obj[key]) === true) {
 
 //задача 3
 
-const student = {
-    name: 'John',
-    age: 19,
-    isHappy: true
+const numbers = [5, 43, 63, 23, 90];
+
+numbers.splice(0,numbers.length);
+
+let dl = numbers.length;
+for (let i  = 0; i < dl; i++) {
+   numbers.pop(); 
 }
 
-for (let key in student) {
-    console.log(key)
-}
-
-for (key in student) {
-    console.log(student[key])
-}
-
-
+console.log(numbers)
 
 
 
 //задача 4
 
-const colors = {
-    'ru pum pu ru rum': {
-        red: 'красный',
-        green: 'зеленый',
-        blue: 'синий',
+const students = ['Polina', 'Dasha', 'Masha'];
 
-        getRed: function () {
-            console.log(this.red)
-        },
-        getBlue: function () {
-            console.log(this.blue)
-        },   
-    },
+console.log(students)
 
-  };
+students.pop();
+students.push('Borya');
 
-colors["ru pum pu ru rum"].getRed()
-colors["ru pum pu ru rum"].getBlue()
+students.shift();
+students.unshift('Andrey');
 
-
-
-
+console.log(students)
 
 
 
 //задача 5
 
-let salaries = {
-    andrey: 500,
-    sveta: 413,
-    anton: 987,
-    igor: 664,
-    alexandra: 199,
+const cats = ['Gachito', 'Tom', 'Batman'];
+
+for(let a = 0; a < cats.length; a++) {
+    console.log(cats[a])
 }
 
-let sum = 0;
-let number = 0;
-
-for (let key in salaries) {
-    sum += salaries[key];
-    number++;
+for (let char of cats) {
+    console.log(char)
 }
-
-let sredSum = sum / number;
-
-console.log(sum);
-console.log(sredSum)
-
-
 
 
 
 
 //задача 6
 
-const user = {};
+const evenNumbers = [2, 4, 6, 8, 10];
+const oddNumbers = [1, 3, 5, 7, 9];
 
-let rename = function () {
-    user.login = prompt('введите имя');
-    user.password = prompt('придумайте пароль');
+for (let j = 0; j < oddNumbers.length; j++) {
+    evenNumbers.push(oddNumbers[j])
 }
 
-rename()
-
-let bool = confirm('сохранить логин и парль?')
-
-if (Boolean(bool) === false) {
-    rename()
+for ( char of evenNumbers) {
+    if (evenNumbers[char] == '8') {
+        console.log(char)
+    }
 }
 
-let checklogin = prompt('Введите логин');
-let checkPassword = prompt('Введите пароль');
+console.log(evenNumbers);
 
-if (user.login === checklogin && user.password === checkPassword) {
-    alert('добро пожаловать')
-} else {
-    alert('error')
+
+
+
+
+//задача 7
+
+
+const binary = [0, 0, 0, 0];
+console.log(binary)
+
+let arr = binary.toString();
+console.log(arr)
+
+let modifedArr = '';
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == '0') {
+        modifedArr = modifedArr + 0;
+    } else {
+        modifedArr = modifedArr + 1;
+    }
 }
+
+console.log(modifedArr)
+
+
+
+
+//продвинутое задание
+
+let word = prompt('word');
+
+let checkWord = function (word) {
+    let i = -1;
+    let wordReverse = '';
+    for (char of word) {
+        wordReverse = wordReverse + word.at(i);
+        i--;
+    }
+
+    if (word == wordReverse) {
+        console.log('true') 
+    } else {
+        console.log(false)
+    }
+}
+
+checkWord(word);
+
