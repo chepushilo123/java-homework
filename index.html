@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <div class="calc_block">   
+        <input id="value" type="text" >
+
+        <div class="clear__">
+            <button id="clear">C</button>
+        </div>
+
+        <div class="numbers">
+            <button class="calc">1</button>
+            <button class="calc">2</button>
+            <button class="calc">3</button>
+            <button class="symb">+</button>
+            <button class="calc">4</button>
+            <button class="calc">5</button>
+            <button class="calc">6</button>
+            <button class="symb">-</button>
+            <button class="calc">7</button>
+            <button class="calc">8</button>
+            <button class="calc">9</button>
+            <button class="symb">*</button>
+            <button class="history">H</button>
+            <button class="calc">0</button>
+            <button class="symb">/</button>
+            <button class="result">=</button>
+        </div>
+    </div>
+
+    <div class="history_list" hidden>
+        <p>История<br><br></p>
+    </div>
+
     <script src="./index.js"></script>
 </body>
 </html>

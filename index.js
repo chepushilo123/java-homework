@@ -1,129 +1,77 @@
-//задача 1
 
-const colors = ['red', 'green', 'blue'];
-console.log(colors.length);
+const value = document.getElementById('value');
+const clear = document.getElementById('clear');
 
+const symbols = ['+', '-', '*', '/'];
+const res = [];
 
+clear.addEventListener('click', () => {
+    value.value = value.value.slice(0, -1);
+} );
 
-
-//задача 2
-
-const animals = ['monkey', 'dog', 'cat'];
-console.log(animals.at(-1));    
-
-
-
-
-
-//задача 3
-
-const numbers = [5, 43, 63, 23, 90];
-
-numbers.splice(0,numbers.length);
-
-let dl = numbers.length;
-for (let i  = 0; i < dl; i++) {
-   numbers.pop(); 
-}
-
-console.log(numbers)
+document.querySelectorAll('.calc').forEach(button => {
+    button.addEventListener('click', () => {
+        value.value += button.innerHTML;
+    })
+})
 
 
+document.querySelectorAll('.symb').forEach(symb => {
+    symb.addEventListener('click', () => {
+        value.value += symb.innerHTML;
+    })
 
-//задача 4
-
-const students = ['Polina', 'Dasha', 'Masha'];
-
-console.log(students)
-
-students.pop();
-students.push('Borya');
-
-students.shift();
-students.unshift('Andrey');
-
-console.log(students)
+})
 
 
-
-//задача 5
-
-const cats = ['Gachito', 'Tom', 'Batman'];
-
-for(let a = 0; a < cats.length; a++) {
-    console.log(cats[a])
-}
-
-for (let char of cats) {
-    console.log(char)
-}
+const result = document.querySelector('.result');
 
 
+result.addEventListener('click', () => {
 
+    document.querySelector('p').innerHTML +=value.value + ' = ';
+    
+    
+    let n = 0;
+    for (let i = 0; i < value.value.length; i++) {
+        for (let char of symbols) {
+            if (char == value.value.at(i) ) {
 
-//задача 6
+                res[n] = Number(value.value.slice(0 ,i));
+                ++n;
+                res[n] = Number(value.value.slice(++i, value.value.length))
+                ++n;
 
-const evenNumbers = [2, 4, 6, 8, 10];
-const oddNumbers = [1, 3, 5, 7, 9];
+                switch(char) {
+                    case '+':   
+                    res[n] = res[0] + res[1];
+                        break;
+                    case '-':
+                        res[n] = res[0] - res[1];
+                        break;
+                    case '*':
+                        res[n] = res[0] * res[1];
+                        break;
+                    case '/':
+                        res[n] = res[0] / res[1];
+                        break;
 
-for (let j = 0; j < oddNumbers.length; j++) {
-    evenNumbers.push(oddNumbers[j])
-}
+                }
 
-for ( char of evenNumbers) {
-    if (evenNumbers[char] == '8') {
-        console.log(char)
-    }
-}
+            }
 
-console.log(evenNumbers);
-
-
-
-
-
-//задача 7
-
-
-const binary = [0, 0, 0, 0];
-console.log(binary)
-
-let arr = binary.toString();
-console.log(arr)
-
-let modifedArr = '';
-
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == '0') {
-        modifedArr = modifedArr + 0;
-    } else {
-        modifedArr = modifedArr + 1;
-    }
-}
-
-console.log(modifedArr)
-
-
-
-
-//продвинутое задание
-
-let word = prompt('word');
-
-let checkWord = function (word) {
-    let i = -1;
-    let wordReverse = '';
-    for (char of word) {
-        wordReverse = wordReverse + word.at(i);
-        i--;
+        }
     }
 
-    if (word == wordReverse) {
-        console.log('true') 
-    } else {
-        console.log(false)
-    }
-}
+    value.value = res.at(-1);
 
-checkWord(word);
+    document.querySelector('p').innerHTML += res.at(-1) + '<br>';
 
+})
+
+
+const history = document.querySelector('.history');
+
+history.addEventListener('click', () => {
+    document.querySelector('.history_list').hidden = false;
+})
