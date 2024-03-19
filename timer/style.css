@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    margin-top: 50px;
+}
+
+p {
+    font-weight: 700;
+    display: inline;
+    font-size: 100px;
+    
+}
+
+.timer {
+    text-align: center;
+    background-color: buttonface;
+    width: 700px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.asd {
+    margin: 0;
+    margin-left: 350px;
+    display: block;
+    padding: 0;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+button {
+    padding: 20px 100px;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+}
+
+.start {
+    background-color: rgb(69, 250, 69);
+}
+
+
+.timer_save {
+    background-color: buttonface;
+    width: 700px;
+    margin: 100px auto;
+}
